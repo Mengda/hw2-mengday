@@ -10,8 +10,11 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
+import org.apache.uima.cas.impl.FeatureImpl;
+import org.apache.uima.cas.Feature;
+
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
  * @generated */
 public class Question_Type extends Annotation_Type {
   /** @generated */
@@ -43,11 +46,54 @@ public class Question_Type extends Annotation_Type {
 
 
 
+  /** @generated */
+  final Feature casFeat_Tokens;
+  /** @generated */
+  final int     casFeatCode_Tokens;
+  /** @generated */ 
+  public int getTokens(int addr) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Question");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_Tokens);
+  }
+  /** @generated */    
+  public void setTokens(int addr, int v) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Question");
+    ll_cas.ll_setRefValue(addr, casFeatCode_Tokens, v);}
+    
+   /** @generated */
+  public int getTokens(int addr, int i) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Question");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+  }
+   
+  /** @generated */ 
+  public void setTokens(int addr, int i, int v) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Question");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, v);
+  }
+ 
+
+
+
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
   public Question_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
+
+ 
+    casFeat_Tokens = jcas.getRequiredFeatureDE(casType, "Tokens", "uima.cas.FSArray", featOkTst);
+    casFeatCode_Tokens  = (null == casFeat_Tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Tokens).getCode();
 
   }
 }

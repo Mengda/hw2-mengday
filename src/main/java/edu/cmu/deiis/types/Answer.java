@@ -9,9 +9,12 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 
+import org.apache.uima.jcas.cas.FSArray;
+
+
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
+ * XML source: D:/eclipseWorkspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Answer extends Annotation {
   /** @generated
@@ -77,6 +80,40 @@ public class Answer extends Annotation {
     if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_isCorrect == null)
       jcasType.jcas.throwFeatMissing("isCorrect", "edu.cmu.deiis.types.Answer");
     jcasType.ll_cas.ll_setBooleanValue(addr, ((Answer_Type)jcasType).casFeatCode_isCorrect, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Tokens
+
+  /** getter for Tokens - gets 
+   * @generated */
+  public FSArray getTokens() {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_Tokens == null)
+      jcasType.jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    return (FSArray)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens)));}
+    
+  /** setter for Tokens - sets  
+   * @generated */
+  public void setTokens(FSArray v) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_Tokens == null)
+      jcasType.jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens, jcasType.ll_cas.ll_getFSRef(v));}    
+    
+  /** indexed getter for Tokens - gets an indexed value - 
+   * @generated */
+  public Token getTokens(int i) {
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_Tokens == null)
+      jcasType.jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens), i);
+    return (Token)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens), i)));}
+
+  /** indexed setter for Tokens - sets an indexed value - 
+   * @generated */
+  public void setTokens(int i, Token v) { 
+    if (Answer_Type.featOkTst && ((Answer_Type)jcasType).casFeat_Tokens == null)
+      jcasType.jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    jcasType.jcas.checkArrayBounds(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens), i);
+    jcasType.ll_cas.ll_setRefArrayValue(jcasType.ll_cas.ll_getRefValue(addr, ((Answer_Type)jcasType).casFeatCode_Tokens), i, jcasType.ll_cas.ll_getFSRef(v));}
   }
 
     

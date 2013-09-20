@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
  * @generated */
 public class Annotation_Type extends org.apache.uima.jcas.tcas.Annotation_Type {
   /** @generated */

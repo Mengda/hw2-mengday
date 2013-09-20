@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
  * @generated */
 public class Answer_Type extends Annotation_Type {
   /** @generated */
@@ -60,6 +60,43 @@ public class Answer_Type extends Annotation_Type {
     ll_cas.ll_setBooleanValue(addr, casFeatCode_isCorrect, v);}
     
   
+ 
+  /** @generated */
+  final Feature casFeat_Tokens;
+  /** @generated */
+  final int     casFeatCode_Tokens;
+  /** @generated */ 
+  public int getTokens(int addr) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_Tokens);
+  }
+  /** @generated */    
+  public void setTokens(int addr, int v) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    ll_cas.ll_setRefValue(addr, casFeatCode_Tokens, v);}
+    
+   /** @generated */
+  public int getTokens(int addr, int i) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    if (lowLevelTypeChecks)
+      return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+  }
+   
+  /** @generated */ 
+  public void setTokens(int addr, int i, int v) {
+        if (featOkTst && casFeat_Tokens == null)
+      jcas.throwFeatMissing("Tokens", "edu.cmu.deiis.types.Answer");
+    if (lowLevelTypeChecks)
+      ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, v, true);
+    jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i);
+    ll_cas.ll_setRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_Tokens), i, v);
+  }
+ 
 
 
 
@@ -72,6 +109,10 @@ public class Answer_Type extends Annotation_Type {
  
     casFeat_isCorrect = jcas.getRequiredFeatureDE(casType, "isCorrect", "uima.cas.Boolean", featOkTst);
     casFeatCode_isCorrect  = (null == casFeat_isCorrect) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_isCorrect).getCode();
+
+ 
+    casFeat_Tokens = jcas.getRequiredFeatureDE(casType, "Tokens", "uima.cas.FSArray", featOkTst);
+    casFeatCode_Tokens  = (null == casFeat_Tokens) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Tokens).getCode();
 
   }
 }

@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
+ * XML source: D:/eclipseWorkspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
@@ -112,6 +112,42 @@ public class NGram extends Annotation {
     if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_elementType == null)
       jcasType.jcas.throwFeatMissing("elementType", "edu.cmu.deiis.types.NGram");
     jcasType.ll_cas.ll_setStringValue(addr, ((NGram_Type)jcasType).casFeatCode_elementType, v);}    
+   
+    
+  //*--------------*
+  //* Feature: N
+
+  /** getter for N - gets 
+   * @generated */
+  public int getN() {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_N == null)
+      jcasType.jcas.throwFeatMissing("N", "edu.cmu.deiis.types.NGram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((NGram_Type)jcasType).casFeatCode_N);}
+    
+  /** setter for N - sets  
+   * @generated */
+  public void setN(int v) {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_N == null)
+      jcasType.jcas.throwFeatMissing("N", "edu.cmu.deiis.types.NGram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((NGram_Type)jcasType).casFeatCode_N, v);}    
+   
+    
+  //*--------------*
+  //* Feature: Origion
+
+  /** getter for Origion - gets 
+   * @generated */
+  public Annotation getOrigion() {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origion == null)
+      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.NGram");
+    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origion)));}
+    
+  /** setter for Origion - sets  
+   * @generated */
+  public void setOrigion(Annotation v) {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origion == null)
+      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.NGram");
+    jcasType.ll_cas.ll_setRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origion, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

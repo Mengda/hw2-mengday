@@ -10,8 +10,11 @@ import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 
+import org.apache.uima.cas.impl.FeatureImpl;
+import org.apache.uima.cas.Feature;
+
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */
@@ -43,11 +46,35 @@ public class Token_Type extends Annotation_Type {
 
 
 
+  /** @generated */
+  final Feature casFeat_Origion;
+  /** @generated */
+  final int     casFeatCode_Origion;
+  /** @generated */ 
+  public int getOrigion(int addr) {
+        if (featOkTst && casFeat_Origion == null)
+      jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_Origion);
+  }
+  /** @generated */    
+  public void setOrigion(int addr, int v) {
+        if (featOkTst && casFeat_Origion == null)
+      jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
+    ll_cas.ll_setRefValue(addr, casFeatCode_Origion, v);}
+    
+  
+
+
+
   /** initialize variables to correspond with Cas Type and Features
 	* @generated */
   public Token_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
+
+ 
+    casFeat_Origion = jcas.getRequiredFeatureDE(casType, "Origion", "edu.cmu.deiis.types.Annotation", featOkTst);
+    casFeatCode_Origion  = (null == casFeat_Origion) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Origion).getCode();
 
   }
 }

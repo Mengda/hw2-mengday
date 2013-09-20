@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 01:13:51 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Fri Sep 20 14:51:14 EDT 2013
+ * XML source: D:/eclipseWorkspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -59,6 +59,22 @@ public class Token extends Annotation {
   @generated modifiable */
   private void readObject() {/*default - does nothing empty block */}
      
-}
+  //*--------------*
+  //* Feature: Origion
+
+  /** getter for Origion - gets 
+   * @generated */
+  public Annotation getOrigion() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origion == null)
+      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
+    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origion)));}
+    
+  /** setter for Origion - sets  
+   * @generated */
+  public void setOrigion(Annotation v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origion == null)
+      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origion, jcasType.ll_cas.ll_getFSRef(v));}    
+  }
 
     

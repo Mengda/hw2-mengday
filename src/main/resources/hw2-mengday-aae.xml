@@ -10,18 +10,22 @@
     <delegateAnalysisEngine key="TokenDescriptor">
       <import name="descriptors.TokenDescriptor"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="NGramDescriptor">
+      <import name="descriptors.NGramDescriptor"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-mengday-aae</name>
     <description/>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters searchStrategy="language_fallback"/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
         <node>QADescriptor</node>
         <node>TokenDescriptor</node>
+      <node>NGramDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
@@ -32,6 +36,7 @@
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Question</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
         </outputs>
         <languagesSupported/>
       </capability>

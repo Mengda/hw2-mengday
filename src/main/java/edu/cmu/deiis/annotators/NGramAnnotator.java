@@ -17,13 +17,15 @@ import edu.cmu.deiis.types.*;
 public class NGramAnnotator extends JCasAnnotator_ImplBase {
 
 	private Integer[] N = null;
-	
+
 	private String[] baseAnnotators = null;
 
 	private String thisProcessorClassName = null;
-	
-	private void processNGrams(JCas aJCas, String annotationClassString, Integer n) throws Exception{
-		Class<Annotation> annotationClass = (Class<Annotation>) Class.forName(annotationClassString);
+
+	private void processNGrams(JCas aJCas, String annotationClassString,
+			Integer n) throws Exception {
+		Class<Annotation> annotationClass = (Class<Annotation>) Class
+				.forName(annotationClassString);
 		Method m = annotationClass.getMethod("getTokens", null);
 		Field f = annotationClass.getDeclaredField("type");
 
@@ -32,46 +34,41 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 		FSIndex index = aJCas.getAnnotationIndex(typeIndexID);
 		FSIterator it = index.iterator();
 		while (it.hasNext()) {
-			
-			System.out.println("1");
-			
+
 			Annotation baseAnnotation = (Annotation) it.next();
 			FSArray tokens = (FSArray) m.invoke(baseAnnotation, null);
-			for(int i = 0; i < tokens.size()+1-n;++i ){
 
-				System.out.println("2");
-				
+			for (int i = 0; i < tokens.size() + 1 - n; ++i) {
 				NGram annotation = new NGram(aJCas);
 				annotation.setCasProcessorId(thisProcessorClassName);
 				annotation.setConfidence(1);
 				annotation.setN(n);
 				annotation.addToIndexes();
-				
+
 				ArrayList<Token> tokenAL = new ArrayList<Token>();
-				for(int j = 0; j < n; ++j){
-					tokenAL.add((Token) tokens.get(i+j));
+				for (int j = 0; j < n; ++j) {
+					tokenAL.add((Token) tokens.get(i + j));
 				}
-				
+
 				annotation.setBegin(tokenAL.get(0).getBegin());
-				annotation.setEnd(tokenAL.get(n-1).getEnd());
-				FSArray annotationTokens = new FSArray(aJCas,n);
+				annotation.setEnd(tokenAL.get(n - 1).getEnd());
+				FSArray annotationTokens = new FSArray(aJCas, n);
 				annotation.setElements(annotationTokens);
-				for(int j = 0; j < n; ++j){
+				for (int j = 0; j < n; ++j) {
 					annotationTokens.set(j, tokenAL.get(j));
 				}
-				
+
 				annotation.setElementType(Token.class.getName());
 				annotation.setOrigion(baseAnnotation);
 			}
 		}
 
-		
 	}
-	
+
 	@Override
 	public void process(JCas aJCas) {
-		for(int n : N){
-			for(String className:baseAnnotators){
+		for (int n : N) {
+			for (String className : baseAnnotators) {
 				try {
 					processNGrams(aJCas, className, n);
 				} catch (Exception e) {
@@ -86,7 +83,8 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 			throws ResourceInitializationException {
 		super.initialize(aContext);
 		N = (Integer[]) aContext.getConfigParameterValue("N");
-		baseAnnotators = (String[]) aContext.getConfigParameterValue("BaseAnnotations");
+		baseAnnotators = (String[]) aContext
+				.getConfigParameterValue("BaseAnnotations");
 		thisProcessorClassName = this.getClass().getName();
 	}
 

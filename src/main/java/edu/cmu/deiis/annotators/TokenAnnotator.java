@@ -34,10 +34,7 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
     Class<Annotation> annotationClass = (Class<Annotation>) Class.forName(annotationClassString);
     
     Field f = annotationClass.getDeclaredField("type");
-    System.out.println("Field: " + f.get(null));
     
-    Method m = annotationClass.getDeclaredMethod("getTypeIndexID", null);
-    System.out.println("Got method: " + m);
     int typeIndexID =  (Integer) f.get(null);
 
     FSIndex index = aJCas.getAnnotationIndex(typeIndexID);
@@ -73,7 +70,12 @@ public class TokenAnnotator extends JCasAnnotator_ImplBase {
         e.printStackTrace();
       }
     }
-
+    
+    FSIterator it = aJCas.getAnnotationIndex(Token.type).iterator();
+    while(it.hasNext()){
+    	Token token = (Token) it.next();
+    	System.out.println(token.getCoveredText());
+    }
 
   }
 }

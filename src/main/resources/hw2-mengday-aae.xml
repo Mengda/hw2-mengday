@@ -13,6 +13,9 @@
   <delegateAnalysisEngine key="NGramDescriptor">
       <import name="descriptors.NGramDescriptor"/>
     </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="AnswerScoreDescriptor">
+      <import name="descriptors.AnswerScoreDescriptor"/>
+    </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>hw2-mengday-aae</name>
@@ -26,6 +29,7 @@
         <node>QADescriptor</node>
         <node>TokenDescriptor</node>
       <node>NGramDescriptor</node>
+      <node>AnswerScoreDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <fsIndexCollection/>
@@ -37,6 +41,7 @@
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Answer</type>
           <type allAnnotatorFeatures="true">edu.cmu.deiis.types.Token</type>
         <type allAnnotatorFeatures="true">edu.cmu.deiis.types.NGram</type>
+        <type allAnnotatorFeatures="true">edu.cmu.deiis.types.AnswerScore</type>
         </outputs>
         <languagesSupported/>
       </capability>

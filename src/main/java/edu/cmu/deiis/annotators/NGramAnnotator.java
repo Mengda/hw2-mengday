@@ -28,8 +28,6 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 		Class<Annotation> annotationClass = (Class<Annotation>) Class
 				.forName(annotationClassString);
 		Method mGetTokens = annotationClass.getMethod("getTokens", null);
-		Method mSetNGrams = annotationClass.getMethod("setNGrams", FSList.class);
-		Method mGetNGrams = annotationClass.getMethod("getNGrams", null);
 		Field f = annotationClass.getDeclaredField("type");
 
 		int typeIndexID = (Integer) f.get(null);
@@ -40,11 +38,7 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 
 			Annotation baseAnnotation = (Annotation) it.next();
 			FSArray tokens = (FSArray) mGetTokens.invoke(baseAnnotation, null);
-			FSList NGramsList = (FSList) mGetNGrams.invoke(baseAnnotation, null);
-			if(NGramsList == null){
-				NGramsList = new FSList(aJCas);
-				mSetNGrams.invoke(baseAnnotation, NGramsList);
-			}
+
 			for (int i = 0; i < tokens.size() + 1 - n; ++i) {
 				NGram annotation = new NGram(aJCas);
 				annotation.setCasProcessorId(thisProcessorClassName);

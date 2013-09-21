@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 20 21:29:04 EDT 2013
+ * Updated by JCasGen Fri Sep 20 23:00:00 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */

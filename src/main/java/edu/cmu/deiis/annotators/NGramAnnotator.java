@@ -10,6 +10,7 @@ import org.apache.uima.cas.FSIndex;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSArray;
+import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import edu.cmu.deiis.types.*;
@@ -26,7 +27,9 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 			Integer n) throws Exception {
 		Class<Annotation> annotationClass = (Class<Annotation>) Class
 				.forName(annotationClassString);
-		Method m = annotationClass.getMethod("getTokens", null);
+		Method mGetTokens = annotationClass.getMethod("getTokens", null);
+		Method mSetNGrams = annotationClass.getMethod("setNGrams", FSList.class);
+		Method mGetNGrams = annotationClass.getMethod("getNGrams", null);
 		Field f = annotationClass.getDeclaredField("type");
 
 		int typeIndexID = (Integer) f.get(null);
@@ -36,8 +39,12 @@ public class NGramAnnotator extends JCasAnnotator_ImplBase {
 		while (it.hasNext()) {
 
 			Annotation baseAnnotation = (Annotation) it.next();
-			FSArray tokens = (FSArray) m.invoke(baseAnnotation, null);
-
+			FSArray tokens = (FSArray) mGetTokens.invoke(baseAnnotation, null);
+			FSList NGramsList = (FSList) mGetNGrams.invoke(baseAnnotation, null);
+			if(NGramsList == null){
+				NGramsList = new FSList(aJCas);
+				mSetNGrams.invoke(baseAnnotation, NGramsList);
+			}
 			for (int i = 0; i < tokens.size() + 1 - n; ++i) {
 				NGram annotation = new NGram(aJCas);
 				annotation.setCasProcessorId(thisProcessorClassName);

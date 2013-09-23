@@ -20,7 +20,7 @@ public class QAAnnotator extends JCasAnnotator_ImplBase {
 
   private Pattern questionPattern = Pattern.compile("^Q .*(\\r|\\n|\\r\\n)");
 
-  private Pattern answerPattern = Pattern.compile("^A (\\d) .*(\\r|\\n|\\r\\n)");
+  private Pattern answerPattern = Pattern.compile("A (\\d) .*(\\r|\\n|\\r\\n)");
 
   /**
    * Generate Question and Answer Annotations.

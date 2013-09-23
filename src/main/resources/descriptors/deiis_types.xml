@@ -29,7 +29,7 @@
       <supertypeName>edu.cmu.deiis.types.Annotation</supertypeName>
     <features>
         <featureDescription>
-          <name>Origion</name>
+          <name>Origin</name>
           <description/>
           <rangeTypeName>edu.cmu.deiis.types.Annotation</rangeTypeName>
         </featureDescription>
@@ -57,7 +57,7 @@
           <rangeTypeName>uima.cas.Integer</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>Origion</name>
+          <name>Origin</name>
           <description/>
           <rangeTypeName>edu.cmu.deiis.types.Annotation</rangeTypeName>
         </featureDescription>

@@ -11,8 +11,8 @@ import org.apache.uima.jcas.cas.FSArray;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 23:00:00 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Sun Sep 22 21:10:57 EDT 2013
+ * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class NGram extends Annotation {
   /** @generated
@@ -133,21 +133,21 @@ public class NGram extends Annotation {
    
     
   //*--------------*
-  //* Feature: Origion
+  //* Feature: Origin
 
-  /** getter for Origion - gets 
+  /** getter for Origin - gets 
    * @generated */
-  public Annotation getOrigion() {
-    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origion == null)
-      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.NGram");
-    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origion)));}
+  public Annotation getOrigin() {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origin == null)
+      jcasType.jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.NGram");
+    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origin)));}
     
-  /** setter for Origion - sets  
+  /** setter for Origin - sets  
    * @generated */
-  public void setOrigion(Annotation v) {
-    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origion == null)
-      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.NGram");
-    jcasType.ll_cas.ll_setRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origion, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setOrigin(Annotation v) {
+    if (NGram_Type.featOkTst && ((NGram_Type)jcasType).casFeat_Origin == null)
+      jcasType.jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.NGram");
+    jcasType.ll_cas.ll_setRefValue(addr, ((NGram_Type)jcasType).casFeatCode_Origin, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

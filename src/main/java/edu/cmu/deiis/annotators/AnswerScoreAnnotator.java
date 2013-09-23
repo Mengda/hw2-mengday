@@ -19,6 +19,10 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
 
   private String thisProcessorClassName = null;
 
+  /**
+   * Generates Annotation AnswerScore, gives a score to an Answer sentence. Score is calculated
+   * based on N-gram matching.
+   */
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
 
@@ -31,7 +35,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
 
     while (NGramit.hasNext()) {
       NGram nGram = (NGram) NGramit.next();
-      Annotation annotation = nGram.getOrigion();
+      Annotation annotation = nGram.getOrigin();
       if (NGramAnnotationMap.get(annotation) == null) {
         NGramAnnotationMap.put(annotation, new ArrayList<NGram>());
       }
@@ -41,7 +45,6 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
       NGramAnnotationMap.get(annotation).add(nGram);
     }
 
-    System.out.println(question);
     ArrayList<NGram> questionNGramArrayList = NGramAnnotationMap.get(question);
 
     Set<Annotation> annotationKeyList = NGramAnnotationMap.keySet();
@@ -66,8 +69,7 @@ public class AnswerScoreAnnotator extends JCasAnnotator_ImplBase {
       annotation.setBegin(answer.getBegin());
       annotation.setEnd(answer.getEnd());
       annotation.setConfidence(1);
-      annotation.setScore(matchedNGramScore);
-      // annotation.setScore(matchedNGramScore / totalNGramScore);
+      annotation.setScore(matchedNGramScore / totalNGramScore);
       annotation.addToIndexes();
     }
   }

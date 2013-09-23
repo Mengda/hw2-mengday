@@ -14,7 +14,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** 
- * Updated by JCasGen Fri Sep 20 23:00:00 EDT 2013
+ * Updated by JCasGen Sun Sep 22 21:10:57 EDT 2013
  * @generated */
 public class Token_Type extends Annotation_Type {
   /** @generated */
@@ -47,20 +47,20 @@ public class Token_Type extends Annotation_Type {
 
 
   /** @generated */
-  final Feature casFeat_Origion;
+  final Feature casFeat_Origin;
   /** @generated */
-  final int     casFeatCode_Origion;
+  final int     casFeatCode_Origin;
   /** @generated */ 
-  public int getOrigion(int addr) {
-        if (featOkTst && casFeat_Origion == null)
-      jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_Origion);
+  public int getOrigin(int addr) {
+        if (featOkTst && casFeat_Origin == null)
+      jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.Token");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_Origin);
   }
   /** @generated */    
-  public void setOrigion(int addr, int v) {
-        if (featOkTst && casFeat_Origion == null)
-      jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
-    ll_cas.ll_setRefValue(addr, casFeatCode_Origion, v);}
+  public void setOrigin(int addr, int v) {
+        if (featOkTst && casFeat_Origin == null)
+      jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.Token");
+    ll_cas.ll_setRefValue(addr, casFeatCode_Origin, v);}
     
   
 
@@ -73,8 +73,8 @@ public class Token_Type extends Annotation_Type {
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_Origion = jcas.getRequiredFeatureDE(casType, "Origion", "edu.cmu.deiis.types.Annotation", featOkTst);
-    casFeatCode_Origion  = (null == casFeat_Origion) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Origion).getCode();
+    casFeat_Origin = jcas.getRequiredFeatureDE(casType, "Origin", "edu.cmu.deiis.types.Annotation", featOkTst);
+    casFeatCode_Origin  = (null == casFeat_Origin) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_Origin).getCode();
 
   }
 }

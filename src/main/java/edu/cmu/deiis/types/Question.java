@@ -16,8 +16,8 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 23:00:00 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Sun Sep 22 21:10:57 EDT 2013
+ * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Question extends Annotation {
   /** @generated

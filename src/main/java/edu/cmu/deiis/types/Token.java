@@ -10,8 +10,8 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** 
- * Updated by JCasGen Fri Sep 20 23:00:00 EDT 2013
- * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/hw2-mengday-aae.xml
+ * Updated by JCasGen Sun Sep 22 21:10:57 EDT 2013
+ * XML source: D:/Eclipse_Workspace/hw2-mengday/src/main/resources/descriptors/deiis_types.xml
  * @generated */
 public class Token extends Annotation {
   /** @generated
@@ -60,21 +60,21 @@ public class Token extends Annotation {
   private void readObject() {/*default - does nothing empty block */}
      
   //*--------------*
-  //* Feature: Origion
+  //* Feature: Origin
 
-  /** getter for Origion - gets 
+  /** getter for Origin - gets 
    * @generated */
-  public Annotation getOrigion() {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origion == null)
-      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
-    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origion)));}
+  public Annotation getOrigin() {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origin == null)
+      jcasType.jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.Token");
+    return (Annotation)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origin)));}
     
-  /** setter for Origion - sets  
+  /** setter for Origin - sets  
    * @generated */
-  public void setOrigion(Annotation v) {
-    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origion == null)
-      jcasType.jcas.throwFeatMissing("Origion", "edu.cmu.deiis.types.Token");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origion, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setOrigin(Annotation v) {
+    if (Token_Type.featOkTst && ((Token_Type)jcasType).casFeat_Origin == null)
+      jcasType.jcas.throwFeatMissing("Origin", "edu.cmu.deiis.types.Token");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Token_Type)jcasType).casFeatCode_Origin, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

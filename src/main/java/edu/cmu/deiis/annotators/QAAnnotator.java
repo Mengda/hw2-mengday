@@ -1,21 +1,30 @@
 package edu.cmu.deiis.annotators;
 
-import org.apache.uima.UimaContext;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.jcas.JCas;
 
-import edu.cmu.deiis.types.*;
+import edu.cmu.deiis.types.Answer;
+import edu.cmu.deiis.types.Question;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+/**
+ * Generate Question and Answer Annotations.
+ * 
+ * @author Mengda Yang
+ * 
+ */
 public class QAAnnotator extends JCasAnnotator_ImplBase {
 
   private Pattern questionPattern = Pattern.compile("^Q .*(\\r|\\n|\\r\\n)");
 
-  private Pattern answerPattern = Pattern.compile("A (\\d) (.*)(\\r|\\n|\\r\\n)");
+  private Pattern answerPattern = Pattern.compile("^A (\\d) .*(\\r|\\n|\\r\\n)");
 
+  /**
+   * Generate Question and Answer Annotations.
+   */
   @Override
   public void process(JCas aJCas) throws AnalysisEngineProcessException {
     String text = aJCas.getDocumentText();
